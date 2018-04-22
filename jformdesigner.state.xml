@@ -9,18 +9,19 @@
       <entry key="newcontainer.layoutmanager" value="com.jformdesigner.runtime.NullLayout" />
       <entry key="newform.superclass.history1" value="javax.swing.JFrame" />
       <entry key="newform.superclass" value="javax.swing.JFrame" />
-      <entry key="properties.expanded.events" value="true" />
       <entry key="properties.expanded.category.expert" value="true" />
       <entry key="properties.showfilter" value="true" />
       <entry key="properties.expanded.category.readonly" value="true" />
       <entry key="properties.expanded.codegen" value="true" />
       <entry key="codeditor.size" value="664, 371" />
       <entry key="newform.toolkit" value="Swing" />
-      <entry key="bindingdialog.lasttab" value="1" />
       <node name="forms">
         <entry key="paletteexpanded-1141119260" value="components,containers" />
         <entry key="paletteexpanded-43261290" value="components,containers" />
         <entry key="selection-1067955211" value="this" />
+        <entry key="paletteexpanded1177624243" value="components,custom" />
+        <entry key="selection1177624243" value="this2" />
+        <entry key="selection-2092649132" value="this" />
       </node>
     </node>
   </component>
