@@ -1,0 +1,91 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[grow][right][200:n,fill][80,center][grow,fill]"
+			"$rowConstraints": "[grow][20,fill][20][][][][grow]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "desktopova_aplikace_5"
+			"$locationPolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labHadat2"
+				"text": "Hádejte písmeno:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtHadanka2"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 1,wmin 200"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnHadat2"
+				"text": "Hádat"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labTypy2"
+				"text": "Doposud hádaná písmena:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 3"
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "fTxtPismena"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"selectionColor": &Color0 new java.awt.Color( 0, 0, 0, 255 )
+				"opaque": false
+				"selectedTextColor": &Color1 new java.awt.Color( 255, 51, 51, 255 )
+				"text": "A B C G J R"
+				"font": &Font0 new java.awt.Font( "Segoe UI", 1, 18 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 3,align left baseline,grow 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labSlovo2"
+				"text": "Uhádnuté slovo:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 4"
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "fTxtSlovo"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"selectionColor": #Color0
+				"opaque": false
+				"selectedTextColor": #Color1
+				"text": "ABRA*A*ABRA"
+				"font": #Font0
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 4,align left baseline,grow 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labZivot2"
+				"text": "Počet životů:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 5"
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "fTxtZivoty"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"selectionColor": #Color0
+				"opaque": false
+				"selectedTextColor": #Color1
+				"text": "5"
+				"font": #Font0
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 5,align left baseline,grow 0 0"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 533, 370 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}
