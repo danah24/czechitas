@@ -21,7 +21,8 @@
         <entry key="paletteexpanded-43261290" value="components,containers" />
         <entry key="paletteexpanded1177624243" value="components,custom" />
         <entry key="selection-2092649132" value="this" />
-        <entry key="selection-1067955211" value="btnPozdrav" />
+        <entry key="selection-1067955211" value="labPozdrav" />
+        <entry key="selection152930322" value="btnTeplotaC" />
       </node>
     </node>
   </component>
