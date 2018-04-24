@@ -1,17 +1,12 @@
 package cz.czechitas.desktopapp;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import net.miginfocom.swing.*;
 
 public class HlavniOkno extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner non-commercial license
-    JLabel labJmeno;
-    JTextField edtJmeno;
-    JButton btnPozdrav;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
     MigLayout migLayoutManager;
@@ -20,31 +15,19 @@ public class HlavniOkno extends JFrame {
         initComponents();
     }
 
-    private void btnStiskuBtnPozdrav(ActionEvent e) {
-        
-    }
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner non-commercial license
-        labJmeno = new JLabel();
-        edtJmeno = new JTextField();
-        btnPozdrav = new JButton();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("desktopova_aplikace_3");
+        setTitle("desktopova_aplikace_farmar");
         Container contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
             "insets rel,hidemode 3",
             // columns
-            "[grow,fill]" +
-            "[128,grow,fill]" +
-            "[grow,fill]",
+            "[fill]",
             // rows
-            "[grow]" +
-            "[fill]" +
-            "[grow]"));
+            "[fill]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
         LayoutManager layout = this.contentPane.getLayout();
@@ -52,19 +35,20 @@ public class HlavniOkno extends JFrame {
             this.migLayoutManager = (MigLayout) layout;
         }
 
-        //---- labJmeno ----
-        labJmeno.setText("Zadej jmeno:");
-        contentPane.add(labJmeno, "cell 0 1");
-
-        //---- edtJmeno ----
-        edtJmeno.setMinimumSize(new Dimension(300, 31));
-        contentPane.add(edtJmeno, "cell 1 1");
-
-        //---- btnPozdrav ----
-        btnPozdrav.setText("Pozdrav");
-        btnPozdrav.addActionListener(e -> btnStiskuBtnPozdrav(e));
-        contentPane.add(btnPozdrav, "cell 2 1");
-        pack();
+        { // compute preferred size
+            Dimension preferredSize = new Dimension();
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
+                Rectangle bounds = contentPane.getComponent(i).getBounds();
+                preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+            }
+            Insets insets = contentPane.getInsets();
+            preferredSize.width += insets.right;
+            preferredSize.height += insets.bottom;
+            contentPane.setMinimumSize(preferredSize);
+            contentPane.setPreferredSize(preferredSize);
+        }
+        setSize(400, 300);
         setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
