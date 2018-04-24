@@ -1,0 +1,17 @@
+<templateSet group="output">
+  <template name="sopl" value="System.out.println($END$);" description="System.out.println()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="COMPLETION" value="false" />
+    </context>
+  </template>
+  <template name="sout" value="System.out.printf(&quot;$END$%n&quot;);" description="Prints a string to System.out" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+      <option name="ASPECTJ" value="true" />
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
