@@ -1,9 +1,0 @@
-<application>
-  <component name="PathMacrosImpl">
-    <macro name="KOTLIN_BUNDLED" value="C:\Java-Training\IntelliJ-Community\plugins\Kotlin\kotlinc" />
-    <macro name="M2_HOME" value="C:/Java-Training/Maven" />
-    <macro name="M2_REPOSITORY" value="C:/Java-Training/Libraries" />
-    <macro name="M2_USER_HOME" value="C:/Java-Training/User-Config/.m2" />
-    <macro name="MAVEN_REPOSITORY" value="C:\Users\moro\.m2\repository" />
-  </component>
-</application>

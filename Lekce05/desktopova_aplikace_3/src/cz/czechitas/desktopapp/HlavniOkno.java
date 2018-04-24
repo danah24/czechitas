@@ -12,6 +12,7 @@ public class HlavniOkno extends JFrame {
     JLabel labJmeno;
     JTextField edtJmeno;
     JButton btnPozdrav;
+    JLabel labPozdrav;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
     MigLayout migLayoutManager;
@@ -21,7 +22,13 @@ public class HlavniOkno extends JFrame {
     }
 
     private void btnStiskuBtnPozdrav(ActionEvent e) {
-        
+        String jmeno;
+        String pozdrav;
+
+        jmeno = edtJmeno.getText();
+        pozdrav = "Ahoj, zdravi "  + jmeno;
+
+        labPozdrav.setText(pozdrav);
     }
 
     private void initComponents() {
@@ -30,6 +37,7 @@ public class HlavniOkno extends JFrame {
         labJmeno = new JLabel();
         edtJmeno = new JTextField();
         btnPozdrav = new JButton();
+        labPozdrav = new JLabel();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -44,6 +52,7 @@ public class HlavniOkno extends JFrame {
             // rows
             "[grow]" +
             "[fill]" +
+            "[]" +
             "[grow]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
@@ -64,6 +73,7 @@ public class HlavniOkno extends JFrame {
         btnPozdrav.setText("Pozdrav");
         btnPozdrav.addActionListener(e -> btnStiskuBtnPozdrav(e));
         contentPane.add(btnPozdrav, "cell 2 1");
+        contentPane.add(labPozdrav, "cell 1 2");
         pack();
         setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents

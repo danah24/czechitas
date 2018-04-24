@@ -6,7 +6,7 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "insets rel,hidemode 3"
 			"$columnConstraints": "[grow,fill][128,grow,fill][grow,fill]"
-			"$rowConstraints": "[grow][fill][grow]"
+			"$rowConstraints": "[grow][fill][][grow]"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 2
@@ -33,6 +33,11 @@ new FormModel {
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnStiskuBtnPozdrav", true ) )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPozdrav"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
