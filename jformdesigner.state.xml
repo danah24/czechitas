@@ -15,12 +15,13 @@
       <entry key="properties.expanded.codegen" value="true" />
       <entry key="codeditor.size" value="664, 371" />
       <entry key="newform.toolkit" value="Swing" />
+      <entry key="properties.expanded.events" value="true" />
       <node name="forms">
         <entry key="paletteexpanded-1141119260" value="components,containers" />
         <entry key="paletteexpanded-43261290" value="components,containers" />
-        <entry key="selection-1067955211" value="this" />
         <entry key="paletteexpanded1177624243" value="components,custom" />
         <entry key="selection-2092649132" value="this" />
+        <entry key="selection-1067955211" value="btnPozdrav" />
       </node>
     </node>
   </component>
