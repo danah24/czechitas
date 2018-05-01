@@ -36,7 +36,7 @@ public class HlavniOkno extends JFrame {
         String textTeplotaF;
         textTeplotaF = String.format ("%2f", teplotaF);
         // textTeplotaF = String.valueOf(teplotaC);
-        //  textTeplotaF = teplotaF.toString();
+        // textTeplotaF = teplotaF.toString();
         editTeplotaF.setText(textTeplotaF);
     }
 
@@ -54,18 +54,17 @@ public class HlavniOkno extends JFrame {
         editTeplotaC.setText(textTeplotaC);
            }
 
-           private void priZmacknutiKlavesyEditTeplotaC(KeyEvent e) {
-               btnPrevedC.setEnabled(true);
-
+           private void priZmacknutiKlavesyeditTeplotaF(KeyEvent e) {
+               btnPrevedF.setEnabled(true);
                boolean jeEnter = e.getExtendedKeyCode() == KeyEvent.VK_ENTER;
-            //   System.out.println("editTeplotaF" + jeEnter);
+            // System.out.println("editTeplotaF" + jeEnter);
                if (jeEnter) {
-                   priStiskubtnPrevedCprevedF(null);
+                   priStiskubtnPrevedFprevedC(null);
                }
            }
 
-           private void priZmacknutiKlavesyEditTeplotaF(KeyEvent e) {
-               btnPrevedF.setEnabled(true);
+           private void priZmacknutiKlavesyeditTeplotaC(KeyEvent e) {
+               btnPrevedC.setEnabled(true);
            }
 
     private void initComponents() {
@@ -115,7 +114,7 @@ public class HlavniOkno extends JFrame {
         txtTeplotaC.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                priZmacknutiKlavesyEditTeplotaF(e);
+                priZmacknutiKlavesyeditTeplotaF(e);
             }
         });
         contentPane.add(txtTeplotaC, "cell 2 1");
@@ -141,7 +140,7 @@ public class HlavniOkno extends JFrame {
         txtTeplotaF.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                priZmacknutiKlavesyEditTeplotaC(e);
+                priZmacknutiKlavesyeditTeplotaC(e);
             }
         });
         contentPane.add(txtTeplotaF, "cell 2 5");
