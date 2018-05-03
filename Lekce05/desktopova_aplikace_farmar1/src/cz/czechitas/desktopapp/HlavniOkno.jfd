@@ -6,12 +6,13 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "insets rel,hidemode 3"
 			"$columnConstraints": "[grow,fill][100:n,fill][fill][fill][100:n,fill][fill][grow,fill]"
-			"$rowConstraints": "[grow][fill][][][][][][][][grow]"
+			"$rowConstraints": "[grow][fill][][][][][][][][][][grow]"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 2
-			"title": "Farmar 1.0"
+			"title": "Farmar 2.0"
 			"$locationPolicy": 1
+			"minimumSize": new java.awt.Dimension( 180, 370 )
 			auxiliary() {
 				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
 			}
@@ -89,32 +90,36 @@ new FormModel {
 				"value": "cell 1 5 5 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "labPocetHlav"
-				"text": "Počet zvířecích hlav"
+				name: "labPodnadpis"
+				"text": "Potřeba krmiva"
 				"font": new java.awt.Font( "MS Gothic", 1, 15 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 7 3 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "editPocetHlav"
+				name: "labText"
+				"text": "Před zimou se musí vypěstovat:"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 7"
+				"value": "cell 1 8 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "labPocetNoh"
-				"text": "Počet zvířecíh nohou"
-				"font": new java.awt.Font( "MS Gothic", 1, 15 )
+				name: "editMrkev"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 8 3 1"
+				"value": "cell 1 9 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "editPocetNoh"
+				name: "editZrni"
+				"foreground": new java.awt.Color( 51, 0, 255, 255 )
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 8"
+				"value": "cell 1 10 2 1"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"location": new java.awt.Point( 10, 0 )
+			"size": new java.awt.Dimension( 400, 346 )
 		} )
 	}
 }

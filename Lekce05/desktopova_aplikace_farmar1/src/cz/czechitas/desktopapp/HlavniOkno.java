@@ -25,10 +25,10 @@ public class HlavniOkno extends JFrame {
     JLabel labValidKralici;
     JLabel labValidHusy;
     JButton btnVypocti;
-    JLabel labPocetHlav;
-    JLabel editPocetHlav;
-    JLabel labPocetNoh;
-    JLabel editPocetNoh;
+    JLabel labPodnadpis;
+    JLabel labText;
+    JLabel editMrkev;
+    JLabel editZrni;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
     MigLayout migLayoutManager;
@@ -58,34 +58,33 @@ public class HlavniOkno extends JFrame {
     private void btnVypoctiPocet(ActionEvent e) {
         String textKralici;
         String textHusy;
-        String totalPocetHlav;
-        String totalPocetNoh;
-        Integer cisloPocetHlav;
-        Integer cisloPocetNoh;
-        Integer cisloPocetNohKralici;
-        Integer cisloPocetNohHusy;
+        String totalMrkev;
+        String totalZrni;
+        String totalRadkyMrkev;
+        String totalRadkyZrni;
 
         textKralici = txtNmrKralici.getText();
         jeCeleCislo(textKralici);
-        int cislotextKralici = Integer.parseInt(textKralici);
+        double cislotextKralici = Double.parseDouble(textKralici);
 
         textHusy = txtNmrHusy.getText();
         jeCeleCislo(textHusy);
-        int cislotextHusy = Integer.parseInt(textHusy);
+        double cislotextHusy = Double.parseDouble(textHusy);
 
-        cisloPocetHlav = cislotextHusy + cislotextKralici;
+        double cisloMrkev = cislotextKralici * 91.5;
+        double cisloZrni = cislotextHusy * 45.75;
 
-        cisloPocetNohKralici = cislotextKralici*4;
-        cisloPocetNohHusy = cislotextHusy*2;
+        double pocetRadkuMrkev = cisloMrkev / 5;
+        double pocetRadkuZrni = cisloZrni / 2;
 
-        cisloPocetNoh = cisloPocetNohHusy + cisloPocetNohKralici;
+        totalMrkev = String.format("%.4g%n", cisloMrkev);
+        totalRadkyMrkev = String.format("%.4g%n", pocetRadkuMrkev);
+        editMrkev.setText(totalMrkev + " mrkve, tedy " + totalRadkyMrkev + " řádků.");
 
-        totalPocetHlav = String.valueOf(cisloPocetHlav);
-        editPocetHlav.setText(totalPocetHlav);
-
-        totalPocetNoh = String.valueOf(cisloPocetNoh);
-        editPocetNoh.setText(totalPocetNoh);
-        }
+        totalZrni = String.format("%.4g%n", cisloZrni);
+        totalRadkyZrni = String.format("%.4g%n", pocetRadkuZrni);
+        editZrni.setText(totalZrni + " zrní, tedy " + totalRadkyZrni + " řádků.");
+    }
 
     public boolean jeCeleCislo(String text) {
         try {
@@ -109,14 +108,15 @@ public class HlavniOkno extends JFrame {
         labValidKralici = new JLabel();
         labValidHusy = new JLabel();
         btnVypocti = new JButton();
-        labPocetHlav = new JLabel();
-        editPocetHlav = new JLabel();
-        labPocetNoh = new JLabel();
-        editPocetNoh = new JLabel();
+        labPodnadpis = new JLabel();
+        labText = new JLabel();
+        editMrkev = new JLabel();
+        editZrni = new JLabel();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Farmar 1.0");
+        setTitle("Farmar 2.0");
+        setMinimumSize(new Dimension(180, 370));
         Container contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
             "insets rel,hidemode 3",
@@ -131,6 +131,8 @@ public class HlavniOkno extends JFrame {
             // rows
             "[grow]" +
             "[fill]" +
+            "[]" +
+            "[]" +
             "[]" +
             "[]" +
             "[]" +
@@ -209,17 +211,25 @@ public class HlavniOkno extends JFrame {
         btnVypocti.addActionListener(e -> btnVypoctiPocet(e));
         contentPane.add(btnVypocti, "cell 1 5 5 1");
 
-        //---- labPocetHlav ----
-        labPocetHlav.setText("Po\u010det zv\u00ed\u0159ec\u00edch hlav");
-        labPocetHlav.setFont(new Font("MS Gothic", Font.BOLD, 15));
-        contentPane.add(labPocetHlav, "cell 1 7 3 1");
-        contentPane.add(editPocetHlav, "cell 4 7");
+        //---- labPodnadpis ----
+        labPodnadpis.setText("Pot\u0159eba krmiva");
+        labPodnadpis.setFont(new Font("MS Gothic", Font.BOLD, 15));
+        contentPane.add(labPodnadpis, "cell 1 7 3 1");
 
-        //---- labPocetNoh ----
-        labPocetNoh.setText("Po\u010det zv\u00ed\u0159ec\u00edh nohou");
-        labPocetNoh.setFont(new Font("MS Gothic", Font.BOLD, 15));
-        contentPane.add(labPocetNoh, "cell 1 8 3 1");
-        contentPane.add(editPocetNoh, "cell 4 8");
+        //---- labText ----
+        labText.setText("P\u0159ed zimou se mus\u00ed vyp\u011bstovat:");
+        labText.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        contentPane.add(labText, "cell 1 8 2 1");
+
+        //---- editMrkev ----
+        editMrkev.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        editMrkev.setForeground(new Color(255, 51, 51));
+        contentPane.add(editMrkev, "cell 1 9 2 1");
+
+        //---- editZrni ----
+        editZrni.setForeground(new Color(51, 0, 255));
+        editZrni.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        contentPane.add(editZrni, "cell 1 10 2 1");
         pack();
         setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents

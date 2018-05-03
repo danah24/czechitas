@@ -65,6 +65,10 @@ public class HlavniOkno extends JFrame {
 
            private void priZmacknutiKlavesyeditTeplotaC(KeyEvent e) {
                btnPrevedC.setEnabled(true);
+               boolean jeEnter = e.getExtendedKeyCode() == KeyEvent.VK_ENTER;
+               if (jeEnter) {
+                   priStiskubtnPrevedCprevedF(null);
+               }
            }
 
     private void initComponents() {
