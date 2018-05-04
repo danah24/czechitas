@@ -1,0 +1,197 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[grow,fill][fill][fill][fill][fill][grow,fill]"
+			"$rowConstraints": "[grow,fill][][20][][][][][][][][grow]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "kalkulacka"
+			"$locationPolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtResult"
+				"preferredSize": new java.awt.Dimension( 18, 35 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1 4 1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMC"
+				"text": "MC"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMR"
+				"text": "MR"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMRplus"
+				"text": "M+"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMS"
+				"text": "MS"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnPercent"
+				"text": "%"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 4"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnRoot"
+				"text": "√"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 4"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnExpn"
+				"text": "x2"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 4"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnInverse"
+				"text": "1/x"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 4"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnCE"
+				"text": "CE"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnC"
+				"text": "C"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnDEL"
+				"text": "DEL"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnDiv"
+				"text": "/"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn7"
+				"text": "7"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 6"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn8"
+				"text": "8"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 6"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn9"
+				"text": "9"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 6"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMultiple"
+				"text": "*"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 6"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn4"
+				"text": "4"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 7"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn5"
+				"text": "5"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 7"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn6"
+				"text": "6"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 7"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMinus"
+				"text": "-"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 7"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn1"
+				"text": "1"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 8"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn2"
+				"text": "2"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 8"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn3"
+				"text": "3"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 8"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnPlus"
+				"text": "+"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 8"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnNeg"
+				"text": "+-"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 9"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn0"
+				"text": "0"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 9"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnDecimal"
+				"text": ","
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 9"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnEquals"
+				"text": "="
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 9"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 298, 432 )
+		} )
+	}
+}

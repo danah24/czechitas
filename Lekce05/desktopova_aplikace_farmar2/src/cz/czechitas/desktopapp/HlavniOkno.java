@@ -118,11 +118,11 @@ public class HlavniOkno extends JFrame {
 
         totalMrkev = String.format("%.4g%n", cisloMrkev);
         totalRadkyMrkev = String.format("%.4g%n", pocetRadkuMrkev);
-        editMrkev.setText(totalMrkev + " mrkve, tedy " + totalRadkyMrkev + " řádků.");
+        editMrkev.setText(totalMrkev + " kg mrkve, tedy " + totalRadkyMrkev + " řádků.");
 
         totalZrni = String.format("%.4g%n", cisloZrni);
         totalRadkyZrni = String.format("%.4g%n", pocetRadkuZrni);
-        editZrni.setText(totalZrni + " zrní, tedy " + totalRadkyZrni + " řádků.");
+        editZrni.setText(totalZrni + " kg zrní, tedy " + totalRadkyZrni + " řádků.");
     }
 
     public boolean jeCeleCislo(String text) {
