@@ -1,0 +1,12 @@
+Uzivatelske pripady:
+1.
+ - Uzivatel zada pocet kraliku
+   - Formular obsahuje textove pole pre pocet kraliku
+ - Uzivatel zada pocet hus
+   - Formular obsahuje textove pole pre pocet hus
+ - Uzivatel klikne na tlacitko "prepocitaj"
+   - Formular obsahuje tlacitko
+ - System vypise pocet hlav
+   - Formular obsahuje label pocet hlav
+ - System vypise pocet nohou
+   - Formular obsahuje label pocet nohou

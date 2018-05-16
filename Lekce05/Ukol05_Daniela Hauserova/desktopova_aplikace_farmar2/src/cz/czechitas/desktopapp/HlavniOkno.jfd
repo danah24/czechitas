@@ -1,0 +1,172 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[grow,fill][100:n,fill][fill][fill][100:n,fill][fill][grow,fill]"
+			"$rowConstraints": "[grow][fill][][][][][][][][][][][][][][grow]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Farmar 2.5"
+			"$locationPolicy": 1
+			"minimumSize": new java.awt.Dimension( 300, 450 )
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labNadpis"
+				"text": "Evidence králíků a hus"
+				"font": new java.awt.Font( "Garamond", 3, 26 )
+				"opaque": true
+				"foreground": new java.awt.Color( 0, 51, 255, 255 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1 5 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labKralici"
+				"text": "Králíci"
+				"font": new java.awt.Font( "MS PGothic", 1, 20 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labHusy"
+				"text": "Husy"
+				"font": new java.awt.Font( "MS PGothic", 1, 20 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labSamiceKralici"
+				"text": "Počet samic"
+				"font": &Font0 new java.awt.Font( "MS Gothic", 0, 15 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 3"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtNmrKraliciSamice"
+				"minimumSize": &Dimension0 new java.awt.Dimension( 30, 31 )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "txtNmrKraliciKeyTyped", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 3,alignx right,growx 0,wmin 40"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labSamiceHusy"
+				"text": "Počet samic"
+				"font": &Font1 new java.awt.Font( "MS Gothic", 0, 15 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 3"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtNmrHusySamice"
+				"minimumSize": &Dimension1 new java.awt.Dimension( 30, 31 )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "txtNmrHusyKeyTyped", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 5 3,alignx right,growx 0,wmin 40"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labSamciKralici"
+				"text": "Počet samců"
+				"font": #Font0
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 4"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtNmrKraliciSamci"
+				"minimumSize": #Dimension0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "txtNmrKraliciKeyTyped", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 4,alignx right,growx 0,wmin 40"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labSamciHusy"
+				"text": "Počet samců"
+				"font": #Font1
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 4"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtNmrHusySamci"
+				"minimumSize": #Dimension1
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "txtNmrHusyKeyTyped", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 5 4,alignx right,growx 0,wmin 40"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labValidKralici"
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labValidHusy"
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnVypocti"
+				"text": "Vypočti"
+				"font": new java.awt.Font( "Garamond", 1, 18 )
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+				"background": new java.awt.Color( 204, 204, 255, 255 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnVypoctiPocet", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 6 5 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPodnadpisChov"
+				"text": "Velikost chovu před zimou:"
+				"font": &Font2 new java.awt.Font( "MS Gothic", 1, 15 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 8 3 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "editPocetKraliku"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 9"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "editPocetHus"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 9"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPodnadpisKrmivo"
+				"text": "Potřeba krmiva"
+				"font": #Font2
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 11 3 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labText"
+				"text": "Před zimou se musí vypěstovat:"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 12 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "editMrkev"
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 13"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "editZrni"
+				"foreground": new java.awt.Color( 51, 0, 255, 255 )
+				"font": new java.awt.Font( "Segoe UI", 0, 12 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 14"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 437, 490 )
+		} )
+	}
+}
