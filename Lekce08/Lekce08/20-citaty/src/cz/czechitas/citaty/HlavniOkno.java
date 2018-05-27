@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
+import com.sun.xml.internal.bind.v2.*;
 import cz.czechitas.citaty.zdroje.*;
 import net.miginfocom.swing.*;
 
@@ -20,6 +21,7 @@ public class HlavniOkno extends JFrame {
     JCheckBoxMenuItem menuPouzeOblibene;
     JButton btnNahodnyCitat;
     JButton btnAutoruvCitat;
+    JButton btnOblibenyCitat;
     JCheckBox chckOblibeny;
     JLabel labAutorTitle;
     JLabel labAutor;
@@ -49,21 +51,38 @@ public class HlavniOkno extends JFrame {
         zjistiPocetCitatu();
 //        int pocetCitatu = citacniSluzba.getPocetCitatu();
 //        labPocetCitatuCelkem.setText(String.valueOf(pocetCitatu));
+        zjistiPocetAutoru();
     }
 
     private void stisknutoNahodnyCitat(ActionEvent e) {
         aktualniCitat = citacniSluzba.getNahodnyCitat();
+        vytiskniCitat();
+    }
+
+    private void stisknutoNahodnyOdAutora(ActionEvent e) {
+        String autor = aktualniCitat.getAutor();
+        aktualniCitat = citacniSluzba.getNahodnyCitatAutora(autor);
+        vytiskniCitat();
+    }
+
+    private void stisknutoOblibenyCitat(ActionEvent e) {
+        aktualniCitat = citacniSluzba.getNahodnyOblibenyCitat();
+        vytiskniCitat();
+    }
+
+    private void vytiskniCitat() {
         labAutor.setText(aktualniCitat.getAutor());
         txtCitat.setText(aktualniCitat.getText());
     }
 
     private void menuOtevritSoubor(ActionEvent e) {
-        JFileChooser vyberovyDialog = new JFileChooser();
+        JFileChooser vyberovyDialog = new JFileChooser();                                             
         int vysledek = vyberovyDialog.showOpenDialog(this);
         if (vysledek == JFileChooser.APPROVE_OPTION) {
             File soubor = vyberovyDialog.getSelectedFile();
             nastavCistacniSluzbu(new SouborovyZdrojCitatu(soubor));
             zjistiPocetCitatu();
+            zjistiPocetAutoru();
         }
     }
 
@@ -72,13 +91,21 @@ public class HlavniOkno extends JFrame {
         citacniSluzba = new CitacniSluzba(zdroj);
     }
 
-    private void zjistiPocetCitatu ()  {
+    private void zjistiPocetCitatu() {
         int pocetCitatu = citacniSluzba.getPocetCitatu();
         labPocetCitatuCelkem.setText(String.valueOf(pocetCitatu));
     }
 //        Citat mujCitat = new Citat("Nahodny student", "Moje jatra!")
 //        mujCitat.getAutor();
 
+    private void zjistiPocetAutoru() {
+        int pocetAutoru = citacniSluzba.getPocetAutoru();
+        labPocetAutoru.setText(String.valueOf(pocetAutoru));
+    }
+
+    private void chckOblibenySet(ActionEvent e) {
+        aktualniCitat.setOblibene(chckOblibeny.isSelected());
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -91,6 +118,7 @@ public class HlavniOkno extends JFrame {
         menuPouzeOblibene = new JCheckBoxMenuItem();
         btnNahodnyCitat = new JButton();
         btnAutoruvCitat = new JButton();
+        btnOblibenyCitat = new JButton();
         chckOblibeny = new JCheckBox();
         labAutorTitle = new JLabel();
         labAutor = new JLabel();
@@ -165,10 +193,18 @@ public class HlavniOkno extends JFrame {
 
         //---- btnAutoruvCitat ----
         btnAutoruvCitat.setText("N\u00e1hodn\u00fd od autora");
+        btnAutoruvCitat.addActionListener(e -> stisknutoNahodnyOdAutora(e));
         contentPane.add(btnAutoruvCitat, "cell 2 0 2 1");
+
+        //---- btnOblibenyCitat ----
+        btnOblibenyCitat.setText("N\u00e1hodn\u00fd obl\u00edben\u00fd cit\u00e1t");
+        btnOblibenyCitat.setMaximumSize(new Dimension(193, 41));
+        btnOblibenyCitat.addActionListener(e -> stisknutoOblibenyCitat(e));
+        contentPane.add(btnOblibenyCitat, "cell 4 0");
 
         //---- chckOblibeny ----
         chckOblibeny.setText("Obl\u00edben\u00fd");
+        chckOblibeny.addActionListener(e -> chckOblibenySet(e));
         contentPane.add(chckOblibeny, "cell 4 0");
 
         //---- labAutorTitle ----

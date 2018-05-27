@@ -32,6 +32,6 @@ public class StatickyZdrojCitatu implements ZdrojCitatu {
     }
 
     private void pridejCitat(String autor, String text) {
-        citaty.add(new Citat(autor, text));
+        citaty.add(new Citat(autor, text)); 
     }
 }
